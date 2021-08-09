@@ -176,15 +176,16 @@ Two PostgreSQL migration backups are available at /data
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
 | *Azure Postgres Database* | Basic - Single Server - 1 vCore - 5GB | 25.32 USD |
-| *Azure Service Bus* | Basic - 256KB Max Message Size - Shared Capacity | 0.05 USD |
-| *Azure App Service* | Free - F1 - 1GB Memory | 0.0 USD |
+| *Azure Service Bus* | Standard - 256KB Max Message Size | 9.81 USD |
+| *Azure App Service* | Basic - B1 - 1.75GB RAM, 10GB Storage | 13.14 USD |
 | *Azure Functions* | Free 1 Million Executions- Price Per Million Afterwards: | 0.20 USD |
+| *SendGrid* | 50,000 Emails/Month | 14.95 USD |
 
 Current prices are based on both my own observations [and The official Azure pricing dashboard.](https://azure.microsoft.com/en-us/pricing/)  
 
 ## Architecture-Explanation
 
-This project was architectured with cost and performance in mind, after considering the small size of our application and our lack of needing a dynamic website allows us to pick a free Azure app service.   
+This project was architectured with cost and performance in mind, after considering the small size of our application and our lack of needing a dynamic website allows us to pick a basic Azure app service.   
 Splitting our notification and database into their own services allows us to:
 1. Scale only the services that need scaling in case of an influx of usage.
 2. And still being able to only pay according to our usage.   
